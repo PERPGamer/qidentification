@@ -33,7 +33,7 @@ AddEventHandler('qidentification:showID', function(item)
 		if #playersInArea > 0 then 
 			local Playerinareaid = {} -- Probably a better way of doing this, feel free to fix this :) -PERPGamer
 			for i = 1, #playersInArea do
-				table.insert(Playerinareaid, GetPlayerServerId(playersInArea[i]))
+				table.insert(Playerinareaid, GetPlayerServerId(NetworkGetPlayerIndexFromPed(playersInArea[i])))
 			end
 			TriggerServerEvent('qidentification:server:showID',item,Playerinareaid)
 			TriggerEvent('qidentification:openID',item)
